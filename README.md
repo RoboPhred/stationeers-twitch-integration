@@ -1,6 +1,7 @@
 # Twitch Integration for Stationeers
 
 Enables logic circuit effects for twitch events.
+Download the mod [here](https://github.com/RoboPhred/stationeers-twitch-integration/releases).
 
 # Installation
 
