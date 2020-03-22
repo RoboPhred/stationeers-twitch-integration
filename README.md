@@ -64,3 +64,40 @@ Using `[twitch:cmd:CommandName:LogicType:Value]` will set a predetermined logic 
 Twitch chat can specify the value to write if you use the logic variant without a value, such as `[twitch:cmd:CommandName:LogicType]`.
 For example, to make a `!setMemory` command set a memory value to a value of their choosing, include `[twitch:cmd:setMemory:Setting]` in the name of the memory unit.
 The chat will be able to set a specific value by specifying it with the command, such as `!setMemory 25`.
+
+# Responding to Events
+
+Since the effect of many events in this mod is to set a memory value to 1, you will need to reset the value when you handle an event.
+
+For example, the following IC script makes a good detection mechanism:
+
+```mips
+alias EventMemory d0
+alias FlashingLight d1
+
+awaitEvent:
+yield
+ # Check the event memory for an event
+ l r0 EventMemory Setting
+ beq r0 1 handleEvent # Got an event, handle it
+ j awaitEvent # No event, keep looking
+
+handleEvent:
+ # Clear the memory so we are ready to detect another event
+ # Do this before handling the event, so we can capture another event
+ # while we are doing other things
+ s EventMemory Setting 0
+
+ # Turn on the flashing light
+ s FlashingLight On 1
+
+ # Leave the light on for 5 seconds
+ sleep 5
+
+ # Turn the light back off
+ s FlashingLight On 0
+
+ # Start looking for new events
+ j awaitEvent
+
+```
