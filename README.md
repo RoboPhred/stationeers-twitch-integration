@@ -20,7 +20,7 @@ This mod should be compatible with both standard Stationeers game installs and t
 
 Before using this mod, you must configure it.
 
-Create a file called `config.json` inside the `stationeers-webapi` folder under `BepInEx/Plugins`.
+Create a file called `config.json` inside the `stationeers-twitch-integration` folder under `BepInEx/Plugins`.
 This file should be a json object with the following properties.
 
 - `enabled` (bool, required): Specify whether the mod should be enabled or disabled. Set to `true` to enable.
