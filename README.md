@@ -101,3 +101,7 @@ handleEvent:
  j awaitEvent
 
 ```
+
+# TODO
+- Events for bits, both presense of and amount.
+- Find a way to pull in subscriber names.  Perhaps renaming a device to the last subscriber name?
