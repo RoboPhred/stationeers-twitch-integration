@@ -46,7 +46,7 @@ you should set the memory back to 0 when you handle the event.
 
 ### Set an arbitrary value
 
-You can set a logic value to anything you want on subscription using `[twitch:sub:LogicType:value]`. For example: `[twitch:sub:On:1]`.
+You can set a logic value to anything you want on subscription using `[twitch:sub:LogicType:value]`. For example, naming a Flashng Light `Subscriber Light [twitch:sub:On:1]` will turn the light on when someone subscribes.
 
 ## Chat commands
 
@@ -54,17 +54,16 @@ You can create chat commands that allow your viewers to control logic devices. T
 
 ### Set the Setting logic value to 1
 
-Using `[twitch:cmd:CommandName]` will create a twitch command to set the Setting value of the target device to 1. Example: `[twitch:cmd:foobar]` will create a `!foobar` command.
+Using `[twitch:cmd:CommandName]` will create a twitch command to set the Setting value of the target device to 1. For example, naming a logic memory to `Foobar Memory [twitch:cmd:foobar]` will create a `!foobar` command, and the memory will be set to 1 whenever someone uses that command.
 
 ### Set a given logic value to a specific value
 
-Using `[twitch:cmd:CommandName:LogicType:Value]` will set a predetermined logic value. For example, `[twitch:cmd:foobar:On:1]` will make a `!foobar` command that turns a device on.
+Using `[twitch:cmd:CommandName:LogicType:Value]` will set a predetermined logic value. For example, a volume pump named `Air Pump [twitch:cmd:pumpOn:On:1]` will make a `!pumpOn` command that turns the pump on.
 
 ### Set a given logic value to a value of the user's choice.
 
 Twitch chat can specify the value to write if you use the logic variant without a value, such as `[twitch:cmd:CommandName:LogicType]`.
-For example, to make a `!setMemory` command set a memory value to a value of their choosing, include `[twitch:cmd:setMemory:Setting]` in the name of the memory unit.
-The chat will be able to set a specific value by specifying it with the command, such as `!setMemory 25`.
+For example, naming a logic memory `[twitch:cmd:setMemory:Setting]` will create a "!setMemory <value>" command.  This command will set the logic memory to the specified value; `!setMemory 25` will set the memory to 25.
 
 # Responding to Events
 
