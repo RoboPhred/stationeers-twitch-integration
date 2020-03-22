@@ -9,6 +9,7 @@ namespace TwitchIntegration
     class ConfigBody
     {
         public bool enabled { get; set; }
+        public bool debug { get; set; }
         public string twitchUsername { get; set; }
         public string twitchAcessToken { get; set; }
         public string twitchChannel { get; set; }
@@ -16,6 +17,7 @@ namespace TwitchIntegration
         public ConfigBody()
         {
             this.enabled = true;
+            this.debug = false;
         }
 
         public void Validate()
@@ -40,6 +42,7 @@ namespace TwitchIntegration
         private static ConfigBody _instance;
 
         public static bool Enabled { get { return Config._instance.enabled; } }
+        public static bool Debug { get { return Config._instance.debug; } }
         public static string TwitchUsername { get { return Config._instance.twitchUsername; } }
         public static string TwitchAccessToken { get { return Config._instance.twitchAcessToken; } }
         public static string TwitchChannel { get { return Config._instance.twitchChannel; } }

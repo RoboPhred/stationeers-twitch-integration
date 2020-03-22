@@ -38,7 +38,6 @@ namespace TwitchIntegration
 
         private void HandleChatCommandReceived(object sender, OnChatCommandReceivedArgs e)
         {
-            Logging.Log(new Dictionary<string, string>() { { "Command", e.Command.CommandText } }, "Handeling chat command");
             var effects = EffectGenerator.EffectsFromChatCommand(e);
             foreach (var effect in effects)
             {

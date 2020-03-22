@@ -27,6 +27,7 @@ This file should be a json object with the following properties.
 - `twitchUsername` (string, required): The username of your twitch bot or account.
 - `twitchAcessToken` (string, required): The OAuth token of your twitch bot or account. Generate it using the [Twitch Password Generator](https://twitchapps.com/tmi/)
 - `twitchChannel` (string, required): The twitch stream to integrate with. This is usually the url path, for example: `twitch.tv/foobar` uses the channel `foobar`
+- `debug` (bool, optional): Set to `true` to record to the logs whenever a device is changed as a result of this mod.
 
 # Usage
 

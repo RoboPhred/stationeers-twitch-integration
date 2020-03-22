@@ -38,7 +38,6 @@ namespace TwitchIntegration
             client = new TwitchClient(wsClient);
             client.Initialize(creds, Config.TwitchChannel);
 
-            client.OnLog += HandleLog;
             client.OnNewSubscriber += HandleNewSubscriber;
             client.OnChatCommandReceived += HandleChatCommand;
             client.OnMessageReceived += HandleMessageReceived;
@@ -51,11 +50,6 @@ namespace TwitchIntegration
             {
                 Logging.Log("Failed to connect to twitch: {0}", e.ToString());
             }
-        }
-
-        private static void HandleLog(object sender, OnLogArgs e)
-        {
-            Logging.Log("Log from twitch: {0}", e.Data);
         }
 
         private static void HandleMessageReceived(object sender, OnMessageReceivedArgs e)

@@ -36,12 +36,15 @@ namespace TwitchIntegration
                           select new { device = device, logicType = logicType.Value, value = value.Value };
             foreach (var result in results)
             {
-                Logging.Log(
-                    new Dictionary<string, string>{
+                if (Config.Debug)
+                {
+                    Logging.Log(
+                        new Dictionary<string, string>{
                         {"Device", result.device.DisplayName},
                         {"LogicType", result.logicType.ToString()},
                         {"Value", result.value.ToString()}
-                    }, "Executing effect");
+                        }, "Executing effect");
+                }
                 if (!result.device.CanLogicWrite(result.logicType))
                 {
                     continue;
