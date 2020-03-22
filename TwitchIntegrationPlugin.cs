@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
-using Assets.Scripts.Objects.Motherboards;
 using BepInEx;
 using TwitchLib.Client.Events;
 
 namespace TwitchIntegration
 {
-    [BepInPlugin("net.robophreddev.stationeers.TwitchIntegration", "Twitch Integration for Stationeers", "1.0.0.0")]
+    [BepInPlugin("net.robophreddev.stationeers.TwitchIntegration", "Twitch Integration for Stationeers", "1.0.1.0")]
     public class TwitchIntegrationPlugin : BaseUnityPlugin
     {
         public static string AssemblyDirectory
