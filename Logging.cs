@@ -33,7 +33,7 @@ namespace TwitchIntegration
             sb.Append("\n");
             sb.AppendFormat(message, args);
 
-            UnityEngine.Debug.Log("[WebAPI]: " + sb.ToString().Replace("\n", "\n\t"));
+            UnityEngine.Debug.Log("[Twitch]: " + sb.ToString().Replace("\n", "\n\t"));
 
             sb.Append("\n\n");
             File.AppendAllText(Logging.LogFilePath, sb.ToString());
